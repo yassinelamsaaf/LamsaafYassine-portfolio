@@ -29,7 +29,7 @@ export const About = () => {
                             <div className="flex flex-wrap gap-2">
                                 {frontendSkills.map((tech , key) => (
                                     <div key={key} className="flex items-center gap-2 bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-                                        <img src={`../../../public/images/${tech.toLowerCase()}.png`}    alt={tech} className="w-5 h-5" />
+                                        {/* <img src={`../../../public/images/${tech.toLowerCase()}.png`}    alt={tech} className="w-5 h-5" /> */}
                                         <span>{tech}</span>
                                    </div>
                                     
@@ -42,7 +42,7 @@ export const About = () => {
                             <div className="flex flex-wrap gap-2">
                                 {backendSkills.map((tech , key) => (
                                     <div key={key} className="flex items-center gap-2 bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-                                    <img src={`../../../public/images/${tech.toLowerCase()}.png`}    alt={tech} className="w-5 h-5" />
+                                    {/* <img src={`../../../public/images/${tech.toLowerCase()}.png`}    alt={tech} className="w-5 h-5" /> */}
                                     <span>{tech}</span>
                                </div>
                                 ))}
