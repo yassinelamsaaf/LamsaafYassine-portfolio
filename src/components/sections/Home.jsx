@@ -1,7 +1,10 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import picofme from "../../../public/picofme.png"
+import { assetUrl } from "../../lib/assetUrl";
 
 export const Home = () => {
+  const portraitUrl = assetUrl("picofme.png");
+  const cvUrl = assetUrl("cv.pdf");
+
   return (
     <section
       id="home"
@@ -24,7 +27,9 @@ export const Home = () => {
 
             <div className="flex flex-col flex-wrap md:flex-row justify-center md:justify-center gap-4">
               <a
-                href="https://drive.google.com/file/d/1CAui1WQeat_9MTY764_btg5ZkdMmbhYG/view?usp=sharing"
+                href={cvUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-500/10 "
               >
                 Download CV
@@ -45,7 +50,13 @@ export const Home = () => {
             </div>
           </div>
           <div>
-            <img className="profilepic w-70 mt-20 md:mt-0 md:w-100 py-2  md:ml-0" src={picofme} alt="" />
+            <img
+              className="profilepic w-70 mt-20 md:mt-0 md:w-100 py-2  md:ml-0"
+              src={portraitUrl}
+              alt=""
+              decoding="async"
+              loading="eager"
+            />
           </div>
         </div>
       </RevealOnScroll>
