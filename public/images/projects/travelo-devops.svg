@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050A15"/>
+      <stop offset="1" stop-color="#06122a"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 H 0 V 48" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <circle cx="1010" cy="520" r="310" fill="#1d4ed8" fill-opacity="0.14"/>
+  <circle cx="290" cy="170" r="230" fill="#1e3a8a" fill-opacity="0.18"/>
+  <rect x="64" y="64" width="1072" height="547" rx="28" fill="#000000" fill-opacity="0.22" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="110" y="190" font-family="ui-sans-serif, system-ui, -apple-system" font-size="44" fill="#e5e7eb" font-weight="700">Travelo DevOps Platform</text>
+  <text x="110" y="250" font-family="ui-sans-serif, system-ui, -apple-system" font-size="26" fill="#9ca3af">3-tier containerized app • CI/CD • Kubernetes • GitOps</text>
+  <g opacity="0.9">
+    <rect x="110" y="320" width="200" height="46" rx="23" fill="#1d4ed8" fill-opacity="0.18" stroke="#1d4ed8" stroke-opacity="0.35"/>
+    <text x="140" y="352" font-family="ui-sans-serif, system-ui" font-size="18" fill="#bfdbfe">Docker</text>
+    <rect x="325" y="320" width="220" height="46" rx="23" fill="#1d4ed8" fill-opacity="0.18" stroke="#1d4ed8" stroke-opacity="0.35"/>
+    <text x="355" y="352" font-family="ui-sans-serif, system-ui" font-size="18" fill="#bfdbfe">Kubernetes</text>
+    <rect x="560" y="320" width="220" height="46" rx="23" fill="#1d4ed8" fill-opacity="0.18" stroke="#1d4ed8" stroke-opacity="0.35"/>
+    <text x="590" y="352" font-family="ui-sans-serif, system-ui" font-size="18" fill="#bfdbfe">Argo CD</text>
+  </g>
+</svg>
