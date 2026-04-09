@@ -1,62 +1,70 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { assetUrl } from "../../lib/assetUrl";
+import { ProfilePhoto3D } from "../ProfilePhoto3D";
 
 export const Home = () => {
-  const portraitUrl = assetUrl("picofme.png");
   const cvUrl = assetUrl("cv.pdf");
 
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative"
+      className="min-h-screen flex items-center justify-center relative pt-20 sm:pt-24 md:pt-28"
     >
       <RevealOnScroll>
-        <div className="flex flex-col-reverse sm:flex-row justify-between items-center text-center md:text-left">
-          <div className="text-center z-10 px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text leading-right text-transparent">
-              Hi, I'm Lamsaaf Yassine
-            </h1>
+        <div className="w-full px-4">
+          <div className="flex flex-col-reverse items-center justify-between gap-10 text-center sm:flex-row sm:text-left sm:items-center">
+            <div className="z-10 w-full sm:flex-1">
+              <h1 className="mt-2 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+                Hi, I&apos;m{" "}
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                  Lamsaaf Yassine
+                </span>
+              </h1>
+              <p className="text-sm font-medium text-blue-300">
+                Software Engineering Student
+              </p>
 
-            <p className="text-gray-400 text-lg my-15 max-w-200 mx-auto">
-              I'm a passionate Software Engineering student with a strong
-              interest in building efficient, scalable, and user-friendly
-              applications. I enjoy solving complex problems, exploring new
-              technologies, and continuously improving my skills in software
-              development, aiming to make an impact through technology.
-            </p>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
+                I build clean, reliable web apps and I care about{" "}
+                <span className="text-blue-200">performance</span>,{" "}
+                <span className="text-blue-200">scalability</span>, and{" "}
+                <span className="text-blue-200">detail</span>. I enjoy solving
+                complex problems, exploring new technologies, and continuously
+                improving my skills.
+              </p>
 
-            <div className="flex flex-col flex-wrap md:flex-row justify-center md:justify-center gap-4">
-              <a
-                href={cvUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-500/10 "
-              >
-                Download CV
-              </a>
-              <a
-                href="#projects"
-                className="bg-blue-500 text-white py-3 px-10 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] "
-              >
-                View Projects
-              </a>
+              <div className="mt-15 flex flex-col flex-wrap justify-center gap-3 sm:flex-row sm:justify-start">
+                <a
+                  href={cvUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-xl border border-white/15 bg-black/20 px-5 py-3 font-medium text-gray-100 transition hover:border-blue-500/20 hover:bg-black/30"
+                >
+                  Download CV
+                </a>
+                <a
+                  href="#projects"
+                  className="rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-[0_0_18px_rgba(59,130,246,0.25)]"
+                >
+                  View Projects
+                </a>
 
-              <a
-                href="#contact"
-                className="border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-500/10 "
-              >
-                Contact Me
-              </a>
+                <a
+                  href="#contact"
+                  className="rounded-xl border border-white/15 bg-black/20 px-5 py-3 font-medium text-gray-100 transition hover:border-blue-500/20 hover:bg-black/30"
+                >
+                  Contact Me
+                </a>
+              </div>
             </div>
-          </div>
-          <div>
-            <img
-              className="profilepic w-70 mt-20 md:mt-0 md:w-100 py-2  md:ml-0"
-              src={portraitUrl}
-              alt=""
-              decoding="async"
-              loading="eager"
-            />
+
+            <div className="mt-10 w-full max-w-sm sm:mt-0 sm:w-[320px] sm:max-w-md sm:flex-shrink-0 md:w-[380px]">
+              <ProfilePhoto3D
+                src="picofme.png"
+                fallbackAlt="Portrait of Lamsaaf Yassine"
+                className="shadow-[0_0_22px_rgba(59,130,246,0.12)]"
+              />
+            </div>
           </div>
         </div>
       </RevealOnScroll>
