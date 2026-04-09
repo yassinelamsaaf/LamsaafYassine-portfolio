@@ -9,6 +9,6 @@ export default defineConfig(({ command }) => {
 
     // - Dev wants normal URLs (http://localhost:5173/)
     // - Build (GitHub Pages) needs the repository sub-path
-    base: command === "/",
+    base: "/",
   };
 });
