@@ -280,11 +280,34 @@ export const Projects = () => {
         "Web app helping students navigate academic path and major choices, powered by a chatbot.",
       cover: "images/projects/orientlamp.svg",
       images: [
-        "images/projects/orientlamp.svg",
-        "images/projects/orientlamp.svg",
-        "images/projects/cit-elearning.svg",
+        "images/projects/orientlamp1.png",
+        "images/projects/orientlamp2.png",
+        "images/projects/orientlamp3.png",
       ],
       tech: ["React", "Spring Boot", "PostgreSQL", "Git/GitHub"],
+    },
+    {
+      title: "INE Alumni",
+      dates: "Ongoing",
+      description:
+        "An alumni-student networking platform built with professional alumni, focused on code quality and best practices.",
+      cover: "images/projects/inealumni1.png",
+      images: ["images/projects/inealumni1.png"],
+      features: [
+        "Built core directory, job offers, and events features with professional alumni collaborators.",
+        "Focused on code quality, maintainability, and best practices throughout development.",
+      ],
+      tech: [
+        "Java",
+        "Spring Boot",
+        "Spring Security (JWT)",
+        "JPA/Hibernate",
+        "PostgreSQL",
+        "Maven",
+        "Docker",
+        "React (Vite)",
+        "Tailwind CSS",
+      ],
     },
     {
       title: "CIT eLearning Platform",
@@ -296,6 +319,16 @@ export const Projects = () => {
         "images/projects/cit-elearning.svg",
       ],
       tech: ["Next.js", "Spring Boot", "Tailwind CSS", "MDX", "Supabase"],
+    },
+    {
+      title: "Portfolio Website",
+      dates: "Ongoing",
+      description: "Interactive personal portfolio with 3D rendering.",
+      cover: "images/projects/portfolio-3d.svg",
+      images: [
+        "images/projects/portfolio1.png",
+      ],
+      tech: ["React.js", "Tailwind CSS", "Three.js"],
     },
     {
       title: "Travelo DevOps Platform",
@@ -320,17 +353,6 @@ export const Projects = () => {
         "Argo CD",
         "Linux",
       ],
-    },
-    {
-      title: "Portfolio Website",
-      dates: "Ongoing",
-      description: "Interactive personal portfolio with 3D rendering.",
-      cover: "images/projects/portfolio-3d.svg",
-      images: [
-        "images/projects/portfolio-3d.svg",
-        "images/projects/portfolio-3d.svg",
-      ],
-      tech: ["React.js", "Tailwind CSS", "Three.js"],
     },
   ];
 

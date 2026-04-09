@@ -57,7 +57,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
             </svg>
           </a>
           <a
-            href="https://www.linkedin.com/in/yassine-lamsaaf"
+            href="https://www.linkedin.com/in/yassine-lamsaaf-9821462a8/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"

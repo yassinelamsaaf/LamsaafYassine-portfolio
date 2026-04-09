@@ -26,7 +26,7 @@ export const Extracurricular = () => {
       org: "Junior Entreprise A2S - INPT",
       location: "INPT",
       dates: "09/2025 - present",
-      image: "images/extracurricular/community-a.svg",
+      image: "images/extracurricular/a2s.png",
       points: [
         "Organisation d'evenements (mentoring, workshops, tech talks) et developpement de partenariats externes.",
         "Contribution a plusieurs projets techniques au sein de la junior entreprise.",
@@ -37,7 +37,7 @@ export const Extracurricular = () => {
       org: "Club Informatique & Telecom (CIT) - INPT",
       location: "INPT",
       dates: "09/2025 - present",
-      image: "images/extracurricular/community-b.svg",
+      image: "images/extracurricular/cit.png",
       points: [
         "Responsable de l'organisation et de l'animation des formations web pour les membres de la cellule.",
       ],
@@ -47,27 +47,23 @@ export const Extracurricular = () => {
       org: "ENACTUS - INPT",
       location: "INPT",
       dates: "09/2024 - present",
-      image: "images/extracurricular/community-a.svg",
-      points: [
-        "Membre de l'equipe projet 'OrientLamp'.",
-      ],
+      image: "images/projects/orientlamp1.png",
+      points: ["Membre de l'equipe projet 'OrientLamp'."],
     },
     {
       title: "Membre actif",
       org: "Social Affairs Club (CAS) - INPT",
       location: "INPT",
       dates: "2024 - present",
-      image: "images/extracurricular/community-b.svg",
-      points: [
-        "Membre actif.",
-      ],
+      image: "images/extracurricular/cas.png",
+      points: ["Membre actif."],
     },
     {
       title: "Membre de l'equipe organisatrice",
       org: "AI Awareness for Students - Safer Internet Day Initiative",
       location: "INPT",
       dates: "02/2025 - present",
-      image: "images/extracurricular/community-a.svg",
+      image: "images/extracurricular/sid.png",
       points: [
         "Membre de l'equipe organisatrice des sessions de sensibilisation a l'IA.",
       ],
@@ -127,10 +123,13 @@ export const Extracurricular = () => {
   useEffect(() => {
     if (isAnimating || isHovering) return undefined;
 
-    const timer = window.setInterval(() => {
-      setDirection(1);
-      setIsAnimating(true);
-    }, isMobile ? 1000 : 2200);
+    const timer = window.setInterval(
+      () => {
+        setDirection(1);
+        setIsAnimating(true);
+      },
+      isMobile ? 1000 : 2200,
+    );
 
     return () => window.clearInterval(timer);
   }, [isAnimating, isHovering, isMobile]);
@@ -194,7 +193,9 @@ export const Extracurricular = () => {
                             <p className="text-lg font-semibold text-white">
                               {item.title}
                             </p>
-                            <p className="mt-1 text-sm text-gray-300">{item.org}</p>
+                            <p className="mt-1 text-sm text-gray-300">
+                              {item.org}
+                            </p>
 
                             <div className="mt-4 flex flex-col gap-2 text-sm text-gray-300 sm:flex-row sm:items-center sm:gap-4">
                               <span className="inline-flex items-center gap-2">

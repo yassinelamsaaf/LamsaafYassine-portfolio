@@ -93,24 +93,24 @@ export const About = () => {
     },
   ];
 
-  const getSkillIcon = (skillName) => {
-    const name = skillName.toLowerCase();
+  // const getSkillIcon = (skillName) => {
+  //   const name = skillName.toLowerCase();
 
-    if (name.includes("html")) return "images/html.png";
-    if (name.includes("css")) return "images/css.png";
-    if (name.includes("javascript")) return "images/javascript.png";
-    if (name.includes("typescript")) return "images/typescript.png";
-    if (name.includes("react")) return "images/react.png";
-    if (name.includes("tailwind")) return "images/tailwind.png";
-    if (name.includes("spring")) return "images/springboot.png";
-    if (name.includes("node")) return "images/nodejs.png";
-    if (name.includes("express")) return "images/expressjs.png";
-    if (name.includes("java")) return "images/java.png";
-    if (name.includes("postgres")) return "images/postgresql.png";
-    if (name.includes("mongo")) return "images/mongodb.png";
+  //   if (name.includes("html")) return "images/html.png";
+  //   if (name.includes("css")) return "images/css.png";
+  //   if (name.includes("javascript")) return "images/javascript.png";
+  //   if (name.includes("typescript")) return "images/typescript.png";
+  //   if (name.includes("react")) return "images/react.png";
+  //   if (name.includes("tailwind")) return "images/tailwind.png";
+  //   if (name.includes("spring")) return "images/springboot.png";
+  //   if (name.includes("node")) return "images/nodejs.png";
+  //   if (name.includes("express")) return "images/expressjs.png";
+  //   if (name.includes("java")) return "images/java.png";
+  //   if (name.includes("postgres")) return "images/postgresql.png";
+  //   if (name.includes("mongo")) return "images/mongodb.png";
 
-    return "images/react.png";
-  };
+  //   return "images/react.png";
+  // };
 
   const education = [
     {
@@ -242,8 +242,7 @@ export const About = () => {
                     const absRelative = Math.abs(relative);
 
                     let transform = "translate3d(-50%, -50%, 0) scale(1)";
-                    let cardClasses =
-                      "z-30 border-white/15 backdrop-blur-lg";
+                    let cardClasses = "z-30 border-white/15 backdrop-blur-lg";
 
                     if (relative === -1) {
                       transform =
@@ -298,13 +297,7 @@ export const About = () => {
                               key={`${group.title}-${skill}`}
                               className="inline-flex items-center gap-2 rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-1.5 text-sm text-blue-100"
                             >
-                              <img
-                                src={assetUrl(getSkillIcon(skill))}
-                                alt=""
-                                className="h-4 w-4"
-                                loading="lazy"
-                                decoding="async"
-                              />
+                              {/* <img src={assetUrl(getSkillIcon(skill))} alt="" className="h-4 w-4" loading="lazy" decoding="async" /> */}
                               {skill}
                             </span>
                           ))}
