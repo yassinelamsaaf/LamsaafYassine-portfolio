@@ -48,17 +48,6 @@ export const ProfilePhoto3D = ({
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
-    const ambient = new THREE.AmbientLight(0xffffff, 0.75);
-    scene.add(ambient);
-
-    const key = new THREE.DirectionalLight(0xffffff, 0.9);
-    key.position.set(2, 2, 4);
-    scene.add(key);
-
-    const rim = new THREE.DirectionalLight(0x93c5fd, 0.55);
-    rim.position.set(-3, 1, 2);
-    scene.add(rim);
-
     const group = new THREE.Group();
     scene.add(group);
 
@@ -68,10 +57,7 @@ export const ProfilePhoto3D = ({
 
     const circleGeo = new THREE.CircleGeometry(1, 96);
 
-    const photoMat = new THREE.MeshStandardMaterial({
-      roughness: 0.65,
-      metalness: 0.05,
-    });
+    const photoMat = new THREE.MeshBasicMaterial();
 
     const photoMesh = new THREE.Mesh(circleGeo, photoMat);
     group.add(photoMesh);
@@ -109,6 +95,7 @@ export const ProfilePhoto3D = ({
         tex.magFilter = THREE.LinearFilter;
         photoMat.map = tex;
         photoMat.needsUpdate = true;
+
       },
       undefined,
       () => {
@@ -144,7 +131,11 @@ export const ProfilePhoto3D = ({
       const w = Math.max(container.clientWidth, 1);
       const h = Math.max(container.clientHeight, 1);
       renderer.setSize(w, h, false);
-      camera.aspect = w / h;
+      const size = Math.min(w, h);
+      const vpX = (w - size) / 2;
+      const vpY = (h - size) / 2;
+      renderer.setViewport(vpX, vpY, size, size);
+      camera.aspect = 1;
       camera.updateProjectionMatrix();
     });
     ro.observe(container);
