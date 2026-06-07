@@ -46,7 +46,7 @@ export const ProfilePhoto3D = ({
       alpha: true,
       powerPreference: "high-performance",
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 3));
 
     const group = new THREE.Group();
     scene.add(group);
@@ -93,6 +93,7 @@ export const ProfilePhoto3D = ({
         tex.colorSpace = THREE.SRGBColorSpace;
         tex.minFilter = THREE.LinearMipmapLinearFilter;
         tex.magFilter = THREE.LinearFilter;
+        tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
         photoMat.map = tex;
         photoMat.needsUpdate = true;
 
@@ -131,11 +132,7 @@ export const ProfilePhoto3D = ({
       const w = Math.max(container.clientWidth, 1);
       const h = Math.max(container.clientHeight, 1);
       renderer.setSize(w, h, false);
-      const size = Math.min(w, h);
-      const vpX = (w - size) / 2;
-      const vpY = (h - size) / 2;
-      renderer.setViewport(vpX, vpY, size, size);
-      camera.aspect = 1;
+      camera.aspect = w / h;
       camera.updateProjectionMatrix();
     });
     ro.observe(container);
