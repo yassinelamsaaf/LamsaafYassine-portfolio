@@ -91,8 +91,9 @@ export const ProfilePhoto3D = ({
         if (disposed) return;
         photoTexture = tex;
         tex.colorSpace = THREE.SRGBColorSpace;
-        tex.minFilter = THREE.LinearMipmapLinearFilter;
+        tex.minFilter = THREE.LinearFilter;
         tex.magFilter = THREE.LinearFilter;
+        tex.generateMipmaps = false;
         tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
         photoMat.map = tex;
         photoMat.needsUpdate = true;
