@@ -42,7 +42,7 @@ export const Contact = () => {
               Let&apos;s Connect
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-[var(--tx-muted)]">
-              Feel free to reach out — I&apos;m always open to new opportunities
+              Feel free to reach out ,  I&apos;m always open to new opportunities
               and conversations.
             </p>
           </header>
