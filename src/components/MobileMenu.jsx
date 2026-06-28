@@ -7,7 +7,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#extracurricular", label: "Extracurricular" },
-    { href: "#contact", label: "Contact" },
+    { href: "#socials", label: "Socials" },
   ];
 
   return (
@@ -68,7 +68,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
             </svg>
           </a>
           <a
-            href="mailto:lamsaafyassine20@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=lamsaafyassine20@gmail.com"
+            target="_blank"
+            rel="noreferrer"
             aria-label="Email"
             className="grid h-9 w-9 place-items-center rounded-xl border border-blue-400/20 bg-black/25 text-gray-200 transition hover:border-blue-300/50 hover:text-white"
           >

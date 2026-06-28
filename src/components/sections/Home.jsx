@@ -50,7 +50,7 @@ export const Home = () => {
                 </a>
 
                 <a
-                  href="#contact"
+                  href="#socials"
                   className="rounded-xl border border-white/15 bg-black/20 px-5 py-3 font-medium text-gray-100 transition hover:border-blue-500/20 hover:bg-black/30"
                 >
                   Contact Me
