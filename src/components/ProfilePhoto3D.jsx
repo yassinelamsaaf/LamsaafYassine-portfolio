@@ -181,7 +181,7 @@ export const ProfilePhoto3D = ({
   return (
     <div
       ref={containerRef}
-      className={`relative aspect-square w-full overflow-hidden rounded-full border border-white/10 bg-black/20 ${className}`}
+      className={`relative aspect-square w-full overflow-hidden rounded-full border border-[var(--bd-card)] bg-[var(--bg-card)] ${className}`}
     >
       <img
         src={assetUrl(src)}

@@ -37,11 +37,11 @@ export const Contact = () => {
       <RevealOnScroll>
         <div className="mx-auto w-full max-w-4xl px-6">
           <header className="mb-12 text-center">
-            <p className="text-sm font-medium text-blue-300">Connect</p>
-            <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+            <p className="text-sm font-medium text-[var(--accent-300)]">Connect</p>
+            <h2 className="mt-2 text-3xl font-bold text-[var(--tx-primary)] sm:text-4xl">
               Let&apos;s Connect
             </h2>
-            <p className="mx-auto mt-3 max-w-lg text-gray-400">
+            <p className="mx-auto mt-3 max-w-lg text-[var(--tx-muted)]">
               Feel free to reach out — I&apos;m always open to new opportunities
               and conversations.
             </p>
@@ -54,10 +54,10 @@ export const Contact = () => {
                 href={item.href}
                 target={item.target || undefined}
                 rel={item.target === "_blank" ? "noreferrer" : undefined}
-                className="group rounded-2xl border border-white/10 bg-black/20 p-6 backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.15)]"
+                className="group rounded-2xl border border-[var(--bd-card)] bg-[var(--bg-card)] p-6 backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.15)]"
               >
                 <div className="flex items-center gap-4">
-                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-white/10 bg-black/30 text-blue-300 transition-all group-hover:border-blue-500/30 group-hover:bg-blue-500/10">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-[var(--bd-card)] bg-[var(--bg-card-solid)] text-[var(--accent-300)] transition-all group-hover:border-blue-500/30 group-hover:bg-blue-500/10">
                     {typeof item.icon === "string" ? (
                       item.icon === "github" ? (
                         <svg
@@ -81,10 +81,10 @@ export const Contact = () => {
                     )}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-medium text-blue-300">
+                    <p className="text-sm font-medium text-[var(--accent-300)]">
                       {item.label}
                     </p>
-                    <p className="mt-0.5 truncate text-sm text-gray-400 transition-colors group-hover:text-gray-200">
+                    <p className="mt-0.5 truncate text-sm text-[var(--tx-muted)] transition-colors group-hover:text-[var(--tx-primary)]">
                       {item.value}
                     </p>
                   </div>

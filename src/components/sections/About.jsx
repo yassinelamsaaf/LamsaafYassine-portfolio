@@ -204,14 +204,14 @@ export const About = () => {
       <RevealOnScroll>
         <div className="mx-auto w-full max-w-6xl px-6">
           <header className="mb-10 text-center">
-            <p className="text-sm font-medium text-blue-300">About</p>
-            <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+            <p className="text-sm font-medium text-[var(--accent-300)]">About</p>
+            <h2 className="mt-2 text-3xl font-bold text-[var(--tx-primary)] sm:text-4xl">
               About Me
             </h2>
           </header>
 
-          <div className="rounded-2xl border border-white/10 bg-blue-950/20 p-8 backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-500/20 hover:shadow-[0_2px_10px_rgba(59,130,246,0.12)]">
-            <p className="text-gray-300">
+          <div className="rounded-2xl border border-[var(--bd-card)] bg-[var(--bg-section)] p-8 backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-500/20 hover:shadow-[0_2px_10px_rgba(59,130,246,0.12)]">
+            <p className="text-[var(--tx-muted)]">
               I'm a Software Engineering student passionate about building
               efficient, scalable applications and solving complex problems
               through technology.
@@ -219,13 +219,13 @@ export const About = () => {
 
             <div className="mt-8">
               <div className="flex items-center justify-between gap-4">
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold text-[var(--tx-primary)]">
                   Technical Skills
                 </h3>
               </div>
 
               <div
-                className="relative mt-6 overflow-hidden rounded-2xl border border-white/10 bg-blue-950/25 p-2 backdrop-blur-10xl"
+                className="relative mt-6 overflow-hidden rounded-2xl border border-[var(--bd-card)] bg-[var(--bg-section-strong)] p-2 backdrop-blur-10xl"
                 style={{ perspective: "1400px" }}
               >
                 <div
@@ -242,29 +242,29 @@ export const About = () => {
                     const absRelative = Math.abs(relative);
 
                     let transform = "translate3d(-50%, -50%, 0) scale(1)";
-                    let cardClasses = "z-30 border-white/15 backdrop-blur-lg";
+                    let cardClasses = "z-30 border-[var(--bd-strong)] backdrop-blur-lg";
 
                     if (relative === -1) {
                       transform =
                         "translate3d(-102%, -50%, -130px) rotateY(28deg) scale(0.86)";
                       cardClasses =
-                        "z-20 border-white/15 bg-blue-950/95 opacity-95 backdrop-blur-lg";
+                        "z-20 border-[var(--bd-strong)] bg-[var(--bg-section-solid)] opacity-95 backdrop-blur-lg";
                     } else if (relative === 1) {
                       transform =
                         "translate3d(2%, -50%, -130px) rotateY(-28deg) scale(0.86)";
                       cardClasses =
-                        "z-20 border-white/15 bg-blue-950/95 opacity-95 backdrop-blur-lg";
+                        "z-20 border-[var(--bd-strong)] bg-[var(--bg-section-solid)] opacity-95 backdrop-blur-lg";
                     } else if (relative === -2) {
                       transform =
                         "translate3d(-165%, -50%, -230px) rotateY(40deg) scale(0.72)";
-                      cardClasses = "z-10 border-white/10 opacity-0";
+                      cardClasses = "z-10 border-[var(--bd-card)] opacity-0";
                     } else if (relative === 2) {
                       transform =
                         "translate3d(65%, -50%, -230px) rotateY(-40deg) scale(0.72)";
-                      cardClasses = "z-10 border-white/10 opacity-0";
+                      cardClasses = "z-10 border-[var(--bd-card)] opacity-0";
                     } else if (absRelative > 2) {
                       transform = "translate3d(-50%, -50%, -260px) scale(0.66)";
-                      cardClasses = "z-0 border-white/10 opacity-0";
+                      cardClasses = "z-0 border-[var(--bd-card)] opacity-0";
                     }
 
                     const dragFactor =
@@ -276,7 +276,7 @@ export const About = () => {
                     return (
                       <article
                         key={group.title}
-                        className={`absolute left-1/2 top-1/2 w-[90%] sm:w-[72%] md:w-[58%] rounded-2xl border bg-gray-900/60 p-5 transition-[transform,opacity,box-shadow,border-color] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                        className={`absolute left-1/2 top-1/2 w-[90%] sm:w-[72%] md:w-[58%] rounded-2xl border bg-[var(--bg-card-skill)] p-5 transition-[transform,opacity,box-shadow,border-color] ease-[cubic-bezier(0.22,1,0.36,1)] ${
                           isDraggingSkills ? "duration-100" : "duration-500"
                         } ${cardClasses}`}
                         style={{
@@ -287,7 +287,7 @@ export const About = () => {
                           if (relative === 1) moveSkillsNext();
                         }}
                       >
-                        <h4 className="text-lg font-semibold text-white">
+                        <h4 className="text-lg font-semibold text-[var(--tx-primary)]">
                           {group.title}
                         </h4>
 
@@ -295,7 +295,7 @@ export const About = () => {
                           {group.items.map((skill) => (
                             <span
                               key={`${group.title}-${skill}`}
-                              className="inline-flex items-center gap-2 rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-1.5 text-sm text-blue-100"
+                              className="inline-flex items-center gap-2 rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-1.5 text-sm text-[var(--accent-100)]"
                             >
                               {/* <img src={assetUrl(getSkillIcon(skill))} alt="" className="h-4 w-4" loading="lazy" decoding="async" /> */}
                               {skill}
@@ -311,7 +311,7 @@ export const About = () => {
                   <button
                     type="button"
                     onClick={moveSkillsPrev}
-                    className="text-lg leading-none font-semibold text-blue-100 transition hover:text-white"
+                    className="text-lg leading-none font-semibold text-[var(--accent-100)] transition hover:text-[var(--tx-primary)]"
                     aria-label="Show previous skill category"
                   >
                     <span className="inline-block transition-transform hover:-translate-x-0.5">
@@ -328,7 +328,7 @@ export const About = () => {
                         className={`h-1.5 rounded-full transition-all ${
                           idx === activeSkillGroupIdx
                             ? "w-10 bg-blue-400"
-                            : "w-4 bg-white/35 hover:bg-white/55"
+                            : "w-4 bg-[var(--bg-dot-inactive)] hover:bg-[var(--bg-dot-hover)]"
                         }`}
                         aria-label={`Show ${group.title} skills`}
                       />
@@ -338,7 +338,7 @@ export const About = () => {
                   <button
                     type="button"
                     onClick={moveSkillsNext}
-                    className="text-lg leading-none font-semibold text-blue-100 transition hover:text-white"
+                    className="text-lg leading-none font-semibold text-[var(--accent-100)] transition hover:text-[var(--tx-primary)]"
                     aria-label="Show next skill category"
                   >
                     <span className="inline-block transition-transform hover:translate-x-0.5">
@@ -350,41 +350,41 @@ export const About = () => {
             </div>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-white/10 bg-blue-950/20 p-8 backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-500/20 hover:shadow-[0_2px_10px_rgba(59,130,246,0.12)]">
+          <div className="mt-8 rounded-2xl border border-[var(--bd-card)] bg-[var(--bg-section)] p-8 backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-500/20 hover:shadow-[0_2px_10px_rgba(59,130,246,0.12)]">
             <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-black/20">
-                <GraduationCap className="h-5 w-5 text-blue-200" />
+              <div className="grid h-10 w-10 place-items-center rounded-xl border border-[var(--bd-card)] bg-[var(--bg-card)]">
+                <GraduationCap className="h-5 w-5 text-[var(--accent-200)]" />
               </div>
-              <h3 className="text-xl font-semibold text-white">Education</h3>
+              <h3 className="text-xl font-semibold text-[var(--tx-primary)]">Education</h3>
             </div>
 
             <div className="mt-6 space-y-6">
               {education.map((e) => (
                 <div
                   key={`${e.school}-${e.dates}`}
-                  className="rounded-xl border border-white/10 bg-black/20 p-6"
+                  className="rounded-xl border border-[var(--bd-card)] bg-[var(--bg-card)] p-6"
                 >
-                  <p className="text-base font-semibold text-white">
+                  <p className="text-base font-semibold text-[var(--tx-primary)]">
                     {e.degree}
                   </p>
-                  <p className="mt-1 text-sm text-gray-300">{e.school}</p>
+                  <p className="mt-1 text-sm text-[var(--tx-muted)]">{e.school}</p>
 
-                  <div className="mt-4 flex flex-col gap-2 text-sm text-gray-300 sm:flex-row sm:items-center sm:gap-4">
+                  <div className="mt-4 flex flex-col gap-2 text-sm text-[var(--tx-muted)] sm:flex-row sm:items-center sm:gap-4">
                     <span className="inline-flex items-center gap-2">
-                      <CalendarRange className="h-4 w-4 text-blue-200" />
+                      <CalendarRange className="h-4 w-4 text-[var(--accent-200)]" />
                       {e.dates}
                     </span>
                     <span className="inline-flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-blue-200" />
+                      <MapPin className="h-4 w-4 text-[var(--accent-200)]" />
                       {e.location}
                     </span>
                   </div>
 
                   {e.courses ? (
-                    <p className="mt-4 inline-flex items-start gap-2 text-sm text-gray-300">
-                      <NotebookText className="mt-0.5 h-4 w-4 flex-none text-blue-200" />
+                    <p className="mt-4 inline-flex items-start gap-2 text-sm text-[var(--tx-muted)]">
+                      <NotebookText className="mt-0.5 h-4 w-4 flex-none text-[var(--accent-200)]" />
                       <span>
-                        <span className="font-medium text-white">Courses:</span>{" "}
+                        <span className="font-medium text-[var(--tx-primary)]">Courses:</span>{" "}
                         {e.courses}
                       </span>
                     </p>

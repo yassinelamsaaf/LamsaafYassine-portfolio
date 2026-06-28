@@ -8,6 +8,9 @@ export const ThreeAuraBackground = () => {
     const container = containerRef.current;
     if (!container) return;
 
+    const isLight =
+      document.documentElement.dataset.theme === "light";
+
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
@@ -30,10 +33,13 @@ export const ThreeAuraBackground = () => {
 
     const geometry = new THREE.SphereGeometry(6, 32, 32);
 
-    // Deep, dark professional blues matching the app
-    const material1 = new THREE.MeshBasicMaterial({ color: 0x1e3a8a }); // blue-900
-    const material2 = new THREE.MeshBasicMaterial({ color: 0x1d4ed8 }); // blue-700
-    const material3 = new THREE.MeshBasicMaterial({ color: 0x1e40af }); // blue-800
+    const colors = isLight
+      ? [0x93c5fd, 0x60a5fa, 0x3b82f6]
+      : [0x1e3a8a, 0x1d4ed8, 0x1e40af];
+
+    const material1 = new THREE.MeshBasicMaterial({ color: colors[0] });
+    const material2 = new THREE.MeshBasicMaterial({ color: colors[1] });
+    const material3 = new THREE.MeshBasicMaterial({ color: colors[2] });
 
     const sphere1 = new THREE.Mesh(geometry, material1);
     const sphere2 = new THREE.Mesh(geometry, material2);
@@ -96,7 +102,7 @@ export const ThreeAuraBackground = () => {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 z-0 h-full w-full scale-125 opacity-20 blur-[100px] sm:blur-[140px]"
+      className="absolute inset-0 z-0 h-full w-full scale-125 opacity-30 blur-[100px] sm:blur-[140px]"
     />
   );
 };

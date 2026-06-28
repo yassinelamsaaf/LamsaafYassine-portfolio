@@ -10,14 +10,18 @@ export const AnimatedBackground = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const isLight =
+      document.documentElement.dataset.theme === "light";
+
     let particles = [];
     let animationFrameId;
 
-    // Config
     const CONNECTION_DISTANCE = 150;
     const MOUSE_RADIUS = 200;
     const PARTICLE_SPEED = 0.4;
-    const COLORS = ["rgba(59, 130, 246, ", "rgba(34, 211, 238, "]; // blue-500, cyan-400
+    const COLORS = isLight
+      ? ["rgba(37, 99, 235, ", "rgba(30, 64, 175, "]
+      : ["rgba(59, 130, 246, ", "rgba(34, 211, 238, "];
 
     let mouse = {
       x: null,
@@ -60,7 +64,6 @@ export const AnimatedBackground = () => {
         ctx.fillStyle = this.color + "0.8)";
         ctx.fill();
 
-        // Add a subtle glow
         ctx.shadowBlur = 15;
         ctx.shadowColor = this.color + "1)";
       }
@@ -69,7 +72,6 @@ export const AnimatedBackground = () => {
         this.x += this.dx;
         this.y += this.dy;
 
-        // Bounce off edges
         if (this.x + this.size > canvas.width || this.x - this.size < 0) {
           this.dx = -this.dx;
         }
@@ -77,7 +79,6 @@ export const AnimatedBackground = () => {
           this.dy = -this.dy;
         }
 
-        // Mouse interaction (repel gently)
         if (mouse.x != null && mouse.y != null) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
@@ -130,7 +131,7 @@ export const AnimatedBackground = () => {
             const opacityValue =
               1 - distance / (CONNECTION_DISTANCE * CONNECTION_DISTANCE);
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(100, 150, 255, ${opacityValue * 0.25})`;
+            ctx.strokeStyle = `rgba(60, 80, 180, ${opacityValue * 0.35})`;
             ctx.lineWidth = 1;
             ctx.moveTo(particles[a].x, particles[a].y);
             ctx.lineTo(particles[b].x, particles[b].y);
@@ -165,7 +166,7 @@ export const AnimatedBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 h-full w-full opacity-35 blur-[1px]"
+      className="absolute inset-0 h-full w-full opacity-40 blur-[1px]"
     />
   );
 };

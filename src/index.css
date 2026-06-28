@@ -1,11 +1,83 @@
 @import "tailwindcss";
 
-html, body{
+:root,
+[data-theme="dark"] {
+  --tx-primary: #ffffff;
+  --tx-secondary: #d1d5db;
+  --tx-muted: #9ca3af;
+  --tx-tertiary: #d1d5db;
+  --bd-card: rgba(255, 255, 255, 0.1);
+  --bd-strong: rgba(255, 255, 255, 0.15);
+  --bg-section: rgba(0, 0, 0, 0.2);
+  --bg-section-strong: rgba(0, 0, 0, 0.2);
+  --bg-section-solid: rgba(2, 6, 23, 0.2);
+  --bg-card: rgba(0, 0, 0, 0.2);
+  --bg-card-skill: rgba(0, 0, 0, 0.2);
+  --bg-card-solid: rgba(0, 0, 0, 0.25);
+  --bg-card-heavy: rgba(0, 0, 0, 0.35);
+  --bg-card-heavier: rgba(0, 0, 0, 0.45);
+  --bg-dot-inactive: rgba(255, 255, 255, 0.15);
+  --bg-dot-hover: rgba(255, 255, 255, 0.3);
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-modal: #0a0a0a;
+  --bg-modal-header: rgba(10, 10, 10, 0.95);
+  --bg-loading: #0a0a0a;
+  --bg-loading-bar: rgba(255, 255, 255, 0.1);
+  --bg-nav: rgba(10, 10, 10, 0.8);
+  --bg-body: #0a0a0a;
+  --bg-gradient-from: #000000;
+  --bg-gradient-to: #000000;
+  --bg-grid: 100%;
+  --grid-color: rgba(128, 128, 128, 0.07);
+  --accent-100: #dbeafe;
+  --accent-200: #bfdbfe;
+  --accent-300: #93c5fd;
+  --accent-400: #60a5fa;
+  --accent-500: #3b82f6;
+}
+
+[data-theme="light"] {
+  --tx-primary: #1e293b;
+  --tx-secondary: #475569;
+  --tx-muted: #64748b;
+  --tx-tertiary: #475569;
+  --bd-card: rgba(0, 0, 0, 0.1);
+  --bd-strong: rgba(0, 0, 0, 0.15);
+  --bg-section: rgba(255, 255, 255, 0.8);
+  --bg-section-strong: rgba(255, 255, 255, 0.85);
+  --bg-section-solid: rgba(255, 255, 255, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-card-skill: rgba(255, 255, 255, 0.8);
+  --bg-card-solid: rgba(255, 255, 255, 0.85);
+  --bg-card-heavy: rgba(255, 255, 255, 0.9);
+  --bg-card-heavier: rgba(255, 255, 255, 0.95);
+  --bg-dot-inactive: rgba(0, 0, 0, 0.15);
+  --bg-dot-hover: rgba(0, 0, 0, 0.25);
+  --bg-overlay: rgba(0, 0, 0, 0.3);
+  --bg-modal: #ffffff;
+  --bg-modal-header: rgba(255, 255, 255, 0.95);
+  --bg-loading: #f8fafc;
+  --bg-loading-bar: rgba(0, 0, 0, 0.1);
+  --bg-nav: rgba(248, 250, 252, 0.85);
+  --bg-body: #f8fafc;
+  --bg-gradient-from: #f8fafc;
+  --bg-gradient-to: #f1f5f9;
+  --bg-grid: 100%;
+  --grid-color: rgba(83, 83, 83, 0.08);
+  --accent-100: #60a5fa;
+  --accent-200: #3b82f6;
+  --accent-300: #2563eb;
+  --accent-400: #1d4ed8;
+  --accent-500: #1e40af;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
-  color: #f3f4f6
+  background: var(--bg-body);
+  color: var(--tx-primary);
 }
 
 :where(
@@ -25,7 +97,6 @@ html, body{
   cursor: not-allowed;
 }
 
-
 @layer utilities {
   @keyframes blink {
     0%,
@@ -36,9 +107,8 @@ html, body{
       opacity: 0;
     }
   }
-  .animate-blink{
+  .animate-blink {
     animation: blink 0.8s step-end infinite;
-
   }
 
   @keyframes loading {
@@ -49,9 +119,8 @@ html, body{
       transform: translateX(250%);
     }
   }
-  .animate-loading-bar{
+  .animate-loading-bar {
     animation: loading 0.8s ease infinite;
-
   }
 
   @keyframes book-card-out-next {
@@ -141,8 +210,6 @@ html, body{
   .animate-delay-150 {
     animation-delay: 150ms;
   }
-
-
 }
 
 .reveal {
@@ -155,8 +222,8 @@ html, body{
   opacity: 1;
   transform: translateY(0);
 }
-.profilepic{
+
+.profilepic {
   border: 2px dashed #0995f2;
   border-radius: 50%;
-
 }

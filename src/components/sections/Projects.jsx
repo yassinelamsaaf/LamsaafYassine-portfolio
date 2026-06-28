@@ -38,10 +38,10 @@ const ProjectCard = ({
   return (
     <article
       onClick={handleCardClick}
-      className={`h-full min-h-[34rem] cursor-pointer rounded-2xl border border-white/10 bg-blue-950/20 p-6 text-left backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_2px_12px_rgba(59,130,246,0.12)] [backface-visibility:hidden] [transform-style:preserve-3d] flex flex-col ${animationClassName}`}
+      className={`h-full min-h-[34rem] cursor-pointer rounded-2xl border border-[var(--bd-card)] bg-[var(--bg-section)] p-6 text-left backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_2px_12px_rgba(59,130,246,0.12)] [backface-visibility:hidden] [transform-style:preserve-3d] flex flex-col ${animationClassName}`}
       style={{ animationDelay: `${animationDelay}ms` }}
     >
-      <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black/30">
+              <div className="relative overflow-hidden rounded-xl border border-[var(--bd-card)] bg-[var(--bg-card-solid)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.18),transparent_50%)] opacity-60" />
 
         <img
@@ -53,10 +53,10 @@ const ProjectCard = ({
         />
 
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent p-4">
-          <h3 className="text-lg font-semibold text-white sm:text-xl">
+          <h3 className="text-lg font-semibold text-[var(--tx-primary)] sm:text-xl">
             {project.title}
           </h3>
-          <p className="mt-1 text-xs text-blue-200/90">{project.dates}</p>
+          <p className="mt-1 text-xs text-[var(--accent-200)]/90">{project.dates}</p>
         </div>
 
         {canSlide ? (
@@ -64,7 +64,7 @@ const ProjectCard = ({
             <button
               type="button"
               onClick={goPrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-black/40 p-2 text-white transition hover:bg-black/60"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-[var(--bd-card)] bg-[var(--bg-card-heavy)] p-2 text-[var(--tx-primary)] transition hover:bg-[var(--bg-card-heavier)]"
               aria-label="Previous image"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -72,7 +72,7 @@ const ProjectCard = ({
             <button
               type="button"
               onClick={goNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-black/40 p-2 text-white transition hover:bg-black/60"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-[var(--bd-card)] bg-[var(--bg-card-heavy)] p-2 text-[var(--tx-primary)] transition hover:bg-[var(--bg-card-heavier)]"
               aria-label="Next image"
             >
               <ChevronRight className="h-5 w-5" />
@@ -81,7 +81,7 @@ const ProjectCard = ({
         ) : null}
       </div>
 
-      <p className="mt-4 min-h-[4.5rem] text-sm leading-relaxed text-gray-300">
+      <p className="mt-4 min-h-[4.5rem] text-sm leading-relaxed text-[var(--tx-muted)]">
         {project.description}
       </p>
 
@@ -89,7 +89,7 @@ const ProjectCard = ({
         {project.tech?.map((t) => (
           <span
             key={t}
-            className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-gray-200 transition-all hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.12)]"
+            className="rounded-full border border-[var(--bd-card)] bg-[var(--bg-card)] px-3 py-1 text-xs text-[var(--tx-tertiary)] transition-all hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,246,0.12)]"
           >
             {t}
           </span>
@@ -103,7 +103,7 @@ const ProjectCard = ({
             e.stopPropagation();
             onOpenDetails(project);
           }}
-          className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
+          className="text-sm font-medium text-[var(--accent-400)] transition hover:text-[var(--accent-300)]"
         >
           View Project »»
         </button>
@@ -129,23 +129,23 @@ const ProjectDetailsModal = ({ project, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 grid place-items-center bg-black/70 p-4 backdrop-blur-sm sm:p-6"
+      className="fixed inset-0 z-50 grid place-items-center bg-[var(--bg-overlay)] p-4 backdrop-blur-sm sm:p-6"
       onClick={onClose}
       role="presentation"
     >
       <div
-        className="w-full max-w-4xl max-h-[90vh] rounded-2xl border border-white/10 bg-zinc-950 shadow-2xl overflow-hidden flex flex-col"
+        className="w-full max-w-4xl max-h-[90vh] rounded-2xl border border-[var(--bd-card)] bg-[var(--bg-modal)] shadow-2xl overflow-hidden flex flex-col"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-label={`${project.title} details`}
       >
-        <div className="sticky top-0 flex items-center justify-between border-b border-white/10 bg-zinc-950/95 p-4 backdrop-blur sm:p-6">
-          <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+        <div className="sticky top-0 flex items-center justify-between border-b border-[var(--bd-card)] bg-[var(--bg-modal-header)] p-4 backdrop-blur sm:p-6">
+          <h3 className="text-2xl font-bold text-[var(--tx-primary)]">{project.title}</h3>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg border border-white/10 bg-black/30 p-2 text-gray-200 transition hover:bg-black/50"
+            className="rounded-lg border border-[var(--bd-card)] bg-[var(--bg-card-solid)] p-2 text-[var(--tx-tertiary)] transition hover:bg-[var(--bg-card-heavy)]"
             aria-label="Close details"
           >
             <X className="h-4 w-4" />
@@ -155,7 +155,7 @@ const ProjectDetailsModal = ({ project, onClose }) => {
         <CustomScrollbar className="max-h-[calc(90vh-120px)]">
           <div className="p-4 sm:p-6 space-y-8">
             <div className="space-y-3">
-              <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black/30">
+      <div className="relative overflow-hidden rounded-xl border border-[var(--bd-card)] bg-[var(--bg-card-solid)]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.18),transparent_50%)] opacity-60" />
                 <img
                   src={assetUrl(images[activeIndex])}
@@ -169,7 +169,7 @@ const ProjectDetailsModal = ({ project, onClose }) => {
                     <button
                       type="button"
                       onClick={goPrev}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-black/40 p-2 text-white transition hover:bg-black/60"
+              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-[var(--bd-card)] bg-[var(--bg-card-heavy)] p-2 text-[var(--tx-primary)] transition hover:bg-[var(--bg-card-heavier)]"
                       aria-label="Previous image"
                     >
                       <ChevronLeft className="h-5 w-5" />
@@ -177,7 +177,7 @@ const ProjectDetailsModal = ({ project, onClose }) => {
                     <button
                       type="button"
                       onClick={goNext}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-black/40 p-2 text-white transition hover:bg-black/60"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-[var(--bd-card)] bg-[var(--bg-card-heavy)] p-2 text-[var(--tx-primary)] transition hover:bg-[var(--bg-card-heavier)]"
                       aria-label="Next image"
                     >
                       <ChevronRight className="h-5 w-5" />
@@ -196,7 +196,7 @@ const ProjectDetailsModal = ({ project, onClose }) => {
                       className={`h-2 rounded-full transition-all ${
                         idx === activeIndex
                           ? "w-6 bg-blue-500"
-                          : "w-2 bg-white/30 hover:bg-white/50"
+                          : "w-2 bg-[var(--bg-dot-inactive)] hover:bg-[var(--bg-dot-hover)]"
                       }`}
                       aria-label={`Go to image ${idx + 1}`}
                     />
@@ -206,20 +206,20 @@ const ProjectDetailsModal = ({ project, onClose }) => {
             </div>
 
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-blue-300">
+              <h4 className="text-sm font-semibold text-[var(--accent-300)]">
                 Project Details
               </h4>
-              <p className="text-sm leading-relaxed text-gray-300">
+              <p className="text-sm leading-relaxed text-[var(--tx-muted)]">
                 {project.description}
               </p>
             </div>
 
             {project.features?.length ? (
               <div className="space-y-3">
-                <h4 className="text-sm font-semibold text-blue-300">
+                <h4 className="text-sm font-semibold text-[var(--accent-300)]">
                   Main functionalities
                 </h4>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-gray-300">
+                <ul className="list-disc space-y-2 pl-5 text-sm text-[var(--tx-muted)]">
                   {project.features.map((feature) => (
                     <li key={feature}>{feature}</li>
                   ))}
@@ -228,14 +228,14 @@ const ProjectDetailsModal = ({ project, onClose }) => {
             ) : null}
 
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-blue-300">
+              <h4 className="text-sm font-semibold text-[var(--accent-300)]">
                 Technologies
               </h4>
               <div className="flex flex-wrap gap-2">
                 {project.tech?.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-gray-200"
+                    className="rounded-full border border-[var(--bd-card)] bg-[var(--bg-card)] px-3 py-1 text-xs text-[var(--tx-tertiary)]"
                   >
                     {t}
                   </span>
@@ -243,13 +243,13 @@ const ProjectDetailsModal = ({ project, onClose }) => {
               </div>
             </div>
 
-            <div className="flex justify-end pt-4 border-t border-white/10">
+            <div className="flex justify-end pt-4 border-t border-[var(--bd-card)]">
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
                 }}
-                className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
+                className="text-sm font-medium text-[var(--accent-400)] transition hover:text-[var(--accent-300)]"
               >
                 View Project »»
               </button>
@@ -354,6 +354,34 @@ export const Projects = () => {
         "Linux",
       ],
     },
+    {
+      title: "Collaboration Platform",
+      dates: "Feb. 2026 – Present",
+      description:
+        "Collaborative project management web-app with real-time notifications, team roles, Kanban boards, tasks tracking.",
+      cover: "images/projects/collab1.png",
+      images: [
+        "images/projects/collab1.png",
+        "images/projects/collab2.png",
+        "images/projects/collab3.png",
+        "images/projects/collab4.png",
+      ],
+      features: [
+        "Real-time in-app notifications via STOMP WebSocket.",
+        "RBAC with Owner/Admin/Member/Viewer + Team Leader/Member roles.",
+        "Kanban board with drag-and-drop functionality.",
+        "Subtask management with status tracking.",
+        "Invitation system with email delivery.",
+      ],
+      tech: [
+        "Angular",
+        "Spring Boot",
+        "PostgreSQL",
+        "Docker Compose",
+        "WebSocket",
+        "Git/GitHub",
+      ],
+    },
   ];
 
   const projectCount = projects.length;
@@ -451,8 +479,8 @@ export const Projects = () => {
       <RevealOnScroll>
         <div className="mx-auto w-full max-w-6xl px-6">
           <header className="mb-10 text-center">
-            <p className="text-sm font-medium text-blue-300">Work</p>
-            <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+            <p className="text-sm font-medium text-[var(--accent-300)]">Work</p>
+            <h2 className="mt-2 text-3xl font-bold text-[var(--tx-primary)] sm:text-4xl">
               Featured Projects
             </h2>
           </header>
@@ -503,15 +531,15 @@ export const Projects = () => {
               type="button"
               onClick={goPrev}
               disabled={isAnimating}
-              className="rounded-full border border-white/15 bg-black/25 px-3 py-1.5 text-gray-200 transition hover:border-blue-400/45 hover:text-white"
+              className="rounded-full border border-[var(--bd-strong)] bg-[var(--bg-card-solid)] px-3 py-1.5 text-[var(--tx-secondary)] transition hover:border-blue-400/45 hover:text-[var(--tx-primary)]"
               aria-label="Previous page"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
 
-            <div className="hidden text-gray-300 sm:block">
+            <div className="hidden text-[var(--tx-muted)] sm:block">
               {" "}
-              <span className="font-medium text-white">{activePosition}</span> /{" "}
+              <span className="font-medium text-[var(--tx-primary)]">{activePosition}</span> /{" "}
               {totalPositions}
             </div>
 
@@ -519,7 +547,7 @@ export const Projects = () => {
               type="button"
               onClick={goNext}
               disabled={isAnimating}
-              className="rounded-full border border-white/15 bg-black/25 px-3 py-1.5 text-gray-200 transition hover:border-blue-400/45 hover:text-white"
+              className="rounded-full border border-[var(--bd-strong)] bg-[var(--bg-card-solid)] px-3 py-1.5 text-[var(--tx-secondary)] transition hover:border-blue-400/45 hover:text-[var(--tx-primary)]"
               aria-label="Next page"
             >
               <ChevronRight className="h-4 w-4" />

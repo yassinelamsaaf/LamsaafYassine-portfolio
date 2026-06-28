@@ -32,36 +32,20 @@ function App() {
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
       <div
         className={`relative min-h-screen overflow-x-hidden transition-colors transition-opacity duration-700 ${
-          theme === "dark" ? "bg-black text-gray-100" : "bg-slate-100 text-slate-900"
-        } ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className="pointer-events-none fixed inset-0 z-0">
-          <div
-            className={`absolute inset-0 ${
-              theme === "dark"
-                ? "bg-gradient-to-b from-black via-zinc-950 to-black"
-                : "bg-gradient-to-b from-slate-100 via-slate-200 to-slate-100"
-            }`}
-          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-gradient-from)] via-[var(--bg-gradient-to)] to-[var(--bg-gradient-from)]" />
 
           <div
-            className={`absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] ${
-              theme === "dark" ? "opacity-100" : "opacity-45"
-            }`}
+            className={`absolute inset-0 bg-[linear-gradient(to_right,var(--grid-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-color)_1px,transparent_1px)] bg-[size:24px_24px]`}
           />
 
           <ThreeAuraBackground />
           <AnimatedBackground />
 
-          <div
-            className={`absolute inset-0 ${
-              theme === "dark"
-                ? "bg-gradient-to-b from-transparent via-transparent to-black/40"
-                : "bg-gradient-to-b from-transparent via-transparent to-slate-300/50"
-            }`}
-          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg-gradient-from)]/40" />
         </div>
 
         <div className="relative z-10">

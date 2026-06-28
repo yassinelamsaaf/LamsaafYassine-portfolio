@@ -16,14 +16,14 @@ export const Navbar = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
+    <nav className="fixed top-0 w-full z-40 bg-[var(--bg-nav)] backdrop-blur-lg border-b border-[var(--bd-card)] shadow-lg">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="grid h-16 grid-cols-[1fr_auto] items-center gap-3 md:grid-cols-[1fr_auto_1fr]">
           <a
             href="#home"
-            className="justify-self-start font-mono text-lg font-bold text-white sm:text-xl"
+            className="justify-self-start font-mono text-lg font-bold text-[var(--tx-primary)] sm:text-xl"
           >
-            yassine<span className="text-blue-500">.lamsaaf</span>
+            yassine<span className="text-[var(--accent-500)]">.lamsaaf</span>
           </a>
 
           <div className="hidden items-center justify-center gap-8 md:flex">
@@ -31,7 +31,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-300 transition-colors hover:text-white"
+                className="text-sm text-[var(--tx-muted)] transition-colors hover:text-[var(--tx-primary)]"
               >
                 {link.label}
               </a>
@@ -44,7 +44,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="hidden h-9 w-9 place-items-center rounded-xl border border-white/15 bg-black/25 text-gray-200 transition hover:border-blue-400/45 hover:text-white md:grid"
+              className="hidden h-9 w-9 place-items-center rounded-xl border border-[var(--bd-strong)] bg-[var(--bg-card-solid)] text-[var(--tx-secondary)] transition hover:border-blue-400/45 hover:text-[var(--tx-primary)] md:grid"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -59,7 +59,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="hidden h-9 w-9 place-items-center rounded-xl border border-white/15 bg-black/25 text-gray-200 transition hover:border-blue-400/45 hover:text-white md:grid"
+              className="hidden h-9 w-9 place-items-center rounded-xl border border-[var(--bd-strong)] bg-[var(--bg-card-solid)] text-[var(--tx-secondary)] transition hover:border-blue-400/45 hover:text-[var(--tx-primary)] md:grid"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -74,7 +74,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
               target="_blank"
               rel="noreferrer"
               aria-label="Email"
-              className="hidden h-9 w-9 place-items-center rounded-xl border border-white/15 bg-black/25 text-gray-200 transition hover:border-blue-400/45 hover:text-white md:grid"
+              className="hidden h-9 w-9 place-items-center rounded-xl border border-[var(--bd-strong)] bg-[var(--bg-card-solid)] text-[var(--tx-secondary)] transition hover:border-blue-400/45 hover:text-[var(--tx-primary)] md:grid"
             >
               <Mail className="h-4 w-4" />
             </a>
@@ -82,7 +82,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
               type="button"
               onClick={onToggleTheme}
               aria-label="Toggle theme"
-              className="hidden h-9 w-9 place-items-center rounded-xl border border-white/15 bg-black/25 text-gray-200 transition hover:border-blue-400/45 hover:text-white md:grid"
+              className="hidden h-9 w-9 place-items-center rounded-xl border border-[var(--bd-strong)] bg-[var(--bg-card-solid)] text-[var(--tx-secondary)] transition hover:border-blue-400/45 hover:text-[var(--tx-primary)] md:grid"
             >
               {theme === "dark" ? (
                 <Moon className="h-4 w-4" />
@@ -93,7 +93,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, theme, onToggleTheme }) => {
 
             <button
               type="button"
-              className="grid h-9 w-9 place-items-center rounded-xl border border-white/15 bg-black/25 text-gray-200 transition hover:border-blue-400/45 hover:text-white md:hidden"
+              className="grid h-9 w-9 place-items-center rounded-xl border border-[var(--bd-strong)] bg-[var(--bg-card-solid)] text-[var(--tx-secondary)] transition hover:border-blue-400/45 hover:text-[var(--tx-primary)] md:hidden"
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label="Open menu"
             >
