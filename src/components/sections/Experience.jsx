@@ -11,6 +11,26 @@ export const Experience = () => {
   const items = [
     {
       title: "INTERNSHIP – FULL STACK DEVELOPER",
+      org: "Advalio",
+      location: "Remote",
+      dates: "Jul. 2026 – Sep. 2026",
+      summary:
+        "Supervision & control platform for a 5G SA testbed (free5GC + srsRAN), replacing manual CLI operation.",
+      accomplishments: [
+        "Spring Boot 3 modular monolith backend (SSH, JWT/RBAC, audit) + real-time React/Vite frontend (WebSocket/STOMP).",
+        "AI Copilot with RAG (pgvector + Ollama) and tool calling, acting only after explicit confirmation.",
+      ],
+      technologies: [
+        "Spring Boot 3",
+        "Spring Security/JWT",
+        "PostgreSQL + pgvector",
+        "WebSocket/STOMP",
+        "React/Vite",
+        "Docker",
+      ],
+    },
+    {
+      title: "INTERNSHIP – FULL STACK DEVELOPER",
       org: "B2BLink (SmartAlert)",
       location: "Remote",
       dates: "Jul. 2025 – Aug. 2025",
@@ -136,16 +156,18 @@ export const Experience = () => {
                       </div>
                     </div>
 
-                    <div className="flex justify-end pt-2 border-t border-[var(--bd-card)]">
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm font-medium text-[var(--accent-400)] transition hover:text-[var(--accent-300)]"
-                      >
-                        view {">>>"}
-                      </a>
-                    </div>
+                    {item.link ? (
+                      <div className="flex justify-end pt-2 border-t border-[var(--bd-card)]">
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-sm font-medium text-[var(--accent-400)] transition hover:text-[var(--accent-300)]"
+                        >
+                          view {">>>"}
+                        </a>
+                      </div>
+                    ) : null}
                   </div>
                 </li>
               ))}

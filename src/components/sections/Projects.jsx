@@ -382,6 +382,33 @@ export const Projects = () => {
         "Git/GitHub",
       ],
     },
+    {
+      title: "Talent Scouting Platform",
+      dates: "Apr. 2026 – Jun. 2026",
+      description:
+        "Proof-of-concept social platform for football talent discovery, with a TikTok-style video feed and scouting features.",
+      cover: "images/projects/talent1.png",
+      images: [
+        "images/projects/talent1.png"
+        // "images/projects/talent2.png",
+        // "images/projects/talent3.png",
+        // "images/projects/talent4.png",
+      ],
+      features: [
+        "Microservices + Event-Driven architecture following DDD principles.",
+        "API Gateway with Apache Kafka for asynchronous event streaming.",
+        "TikTok-style vertical video feed for talent discovery.",
+      ],
+      tech: [
+        "Spring Boot",
+        "Apache Kafka",
+        "PostgreSQL",
+        "Redis",
+        "React Native",
+        "Docker",
+        "Kubernetes",
+      ],
+    },
   ];
 
   const projectCount = projects.length;

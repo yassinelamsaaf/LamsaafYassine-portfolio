@@ -154,7 +154,7 @@ export const Extracurricular = () => {
               <div
                 ref={trackRef}
                 onTransitionEnd={onTrackTransitionEnd}
-                className={`flex ${isAnimating ? "duration-500" : "duration-0"} transition-transform ease-[cubic-bezier(0.22,1,0.36,1)]`}
+                className={`flex items-stretch ${isAnimating ? "duration-500" : "duration-0"} transition-transform ease-[cubic-bezier(0.22,1,0.36,1)]`}
                 style={{
                   width: `${((visibleCount + 1) / visibleCount) * 100}%`,
                   transform:
@@ -173,10 +173,10 @@ export const Extracurricular = () => {
                   return (
                     <div
                       key={`${item.title}-${itemIndex}`}
-                      className="px-3"
+                      className="h-full px-3"
                       style={{ width: `${100 / (visibleCount + 1)}%` }}
                     >
-                      <article className="h-full rounded-2xl border border-[var(--bd-card)] bg-[var(--bg-card)] p-6 transition-all hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_2px_10px_rgba(59,130,246,0.12)]">
+                      <article className="flex h-full flex-col rounded-2xl border border-[var(--bd-card)] bg-[var(--bg-card)] p-6 transition-all hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_2px_10px_rgba(59,130,246,0.12)]">
                         <div className="relative mb-5 overflow-hidden rounded-xl border border-[var(--bd-card)] bg-[var(--bg-card-heavy)]">
                           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.18),transparent_50%)] opacity-60" />
                           <img
@@ -216,7 +216,7 @@ export const Extracurricular = () => {
                           </div>
                         </div>
 
-                        <div className="mt-5 space-y-2 text-sm text-[var(--tx-muted)]">
+                        <div className="mt-auto space-y-2 pt-5 text-sm text-[var(--tx-muted)]">
                           {item.points.map((p) => (
                             <p key={p} className="flex gap-2">
                               <CircleDot className="mt-0.5 h-4 w-4 flex-none text-[var(--accent-200)]" />
